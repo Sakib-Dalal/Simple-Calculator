@@ -22,15 +22,30 @@ def division(n1, n2):
 
 operations = {"+": addition, "-": subtraction, "*": multiplication, "/": division}
 
-num1 = int(input("Enter First Number: "))
-num2 = int(input("Enter Second Number: "))
 
-for symbol in operations:
-    print(symbol)
+def calculator():
+    num1 = int(input("Enter First Number: "))
+    num2 = int(input("Enter Second Number: "))
 
-operation_symbol = input("Pick an operation from above list: ")
+    for symbol in operations:
+        print(symbol)
 
-calculator_function = operations[operation_symbol]
-answer = calculator_function(num1, num2)
+    operation_symbol = input("Pick an operation from above list: ")
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+    calculator_function = operations[operation_symbol]
+    answer = calculator_function(num1, num2)
+
+    print(f"{num1} {operation_symbol} {num2} = {answer}")
+
+
+is_calculation_stop = False
+
+calculator()
+
+while not is_calculation_stop:
+    end_or_not = input("Enter 'yes' to end the calculator, or 'no' for new calculation: ").lower()
+    if end_or_not == 'no':
+        is_calculation_stop = False
+        calculator()  # use of recursion in function
+    else:
+        is_calculation_stop = True
