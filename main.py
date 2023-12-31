@@ -1,5 +1,8 @@
 # Calculator
 
+from art import logo
+
+
 # Addition
 def addition(n1, n2):
     return n1 + n2
@@ -24,8 +27,8 @@ operations = {"+": addition, "-": subtraction, "*": multiplication, "/": divisio
 
 
 def calculator():
-    num1 = int(input("Enter First Number: "))
-    num2 = int(input("Enter Second Number: "))
+    num1 = float(input("Enter First Number: "))
+    num2 = float(input("Enter Second Number: "))
 
     for symbol in operations:
         print(symbol)
@@ -40,6 +43,7 @@ def calculator():
 
 is_calculation_stop = False
 
+print(logo)
 calculator()
 
 while not is_calculation_stop:
